@@ -1,6 +1,10 @@
 RewriteEngine On
 RewriteBase /
 
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 # Regola di riscrittura generale
 RewriteRule ^(.*)$ public/$1 [L]
 
