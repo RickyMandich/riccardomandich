@@ -96,7 +96,7 @@
                     <div>
                         <div class="d-flex justify-content-between mb-1">
                             <span>Inglese</span>
-                            <span class="badge bg-info text-dark">Circa Livello B2 (Non Certificato)</span>
+                            <span class="badge bg-info text-dark">Livello B2 (Non Certificato)</span>
                         </div>
                     </div>
 
