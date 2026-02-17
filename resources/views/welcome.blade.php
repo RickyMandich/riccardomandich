@@ -11,8 +11,9 @@
         <header class="glass-card mb-4">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-3">
-                    <img src="{{ asset('images/foto-per-cv.jpg') }}" alt="Riccardo Mandich"
-                        class="img-fluid rounded-pill shadow-sm profile-img">
+                    <div class="profile-img-container shadow-sm mx-auto mx-md-0 mb-4 mb-md-0">
+                        <img src="{{ asset('images/foto-per-cv.jpg') }}" alt="Riccardo Mandich" class="profile-img">
+                    </div>
                 </div>
                 <div class="col-md-7">
                     <h1 class="display-4 mb-2"><span class="text-gradient">Riccardo Mandich</span></h1>

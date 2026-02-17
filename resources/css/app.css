@@ -141,3 +141,16 @@ h3 {
     bottom: -100px;
     left: -100px;
 }
+
+/* Profile Image */
+.profile-img-container {
+    width: 180px;
+    height: 180px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
