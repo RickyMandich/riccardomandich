@@ -11,7 +11,8 @@
         <header class="glass-card mb-4">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-3">
-                    <img src="{{ asset('images/foto-per-cv.jpg') }}" alt="Profile Picture" class="img-fluid rounded-circle">
+                    <img src="{{ storage('images/foto-per-cv.jpg') }}" alt="Profile Picture"
+                        class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-7">
                     <h1 class="display-4 mb-2"><span class="text-gradient">Riccardo Mandich</span></h1>
