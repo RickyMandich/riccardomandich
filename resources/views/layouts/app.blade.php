@@ -44,8 +44,8 @@
 
         <footer class="bg-secondary mt-auto pt-2">
             <div class="container">
-                <div class="row">
-                    <div class="col-6 text-center">
+                <div class="row g-4 align-items-center">
+                    <div class="col-12 col-md-6 text-center text-md-start">
                         <p class="mb-1">
                             <span class="text-warning"><i class="bi bi-alarm"></i>
                                 {{ now()->format('d/m/Y H:i:s') }}</span>
@@ -65,48 +65,26 @@
                             </small>
                         </p>
                     </div>
-                    <div class="col-6 text-center">
-                        <div class="row">
-                            <h6 class="col-8">
-                                informazioni personali
-                            </h6>
-                            <span class="col-4"></span>
-                            <div class="col-3">
-                                <ul>
-                                    <li>
-                                        telefono
-                                    </li>
-                                    <li>
-                                        mail
-                                    </li>
-                                    <li>
-                                        nascita
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-6">
-                                <ul>
-                                    <li>
-                                        <small class="text-muted text-uppercase">
-                                            +39 370 351 3963
-                                        </small>
-                                    </li>
-                                    <li>
-                                        <small class="text-muted text-uppercase">
-                                            <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it"
-                                                target="_blank" rel="noopener noreferrer">
-                                                riccardo.mandich.25@stud.itsaltoadriatico.it
-                                            </a>
-                                        </small>
-                                    </li>
-                                    <li>
-                                        <small>
-                                            2006
-                                        </small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="col-12 col-md-6 text-center text-md-end">
+                        <h6 class="text-warning mb-3">Informazioni Personali</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <span class="text-muted small text-uppercase">Telefono:</span>
+                                <small class="text-white"> +39 370 351 3963</small>
+                            </li>
+                            <li class="mb-2">
+                                <span class="text-muted small text-uppercase">Mail:</span>
+                                <small>
+                                    <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="text-white text-decoration-none">
+                                        riccardo.mandich.25@stud.itsaltoadriatico.it
+                                    </a>
+                                </small>
+                            </li>
+                            <li>
+                                <span class="text-muted small text-uppercase">Nascita:</span>
+                                <small class="text-white"> 2006</small>
+                            </li>
+                        </ul>
                     </div>
                 </div>
         </footer>
