@@ -27,9 +27,9 @@
 
 <body>
     <div id="app" class="d-flex flex-column justify-content-between min-vh-100">
-        <nav class="navbar navbar-expand-md shadow-sm bg-secondary">
+        <nav class="navbar navbar-expand-md shadow-sm glass-nav sticky-top">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center text-warning" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center text-warning fw-bold" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
@@ -42,51 +42,41 @@
             </div>
         </main>
 
-        <footer class="bg-secondary mt-auto pt-2">
+        <footer class="glass-footer mt-auto py-5">
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-12 col-md-6 text-center text-md-start">
-                        <p class="mb-1">
-                            <span class="text-warning"><i class="bi bi-alarm"></i>
+                        <p class="mb-2">
+                            <span class="text-warning fw-bold"><i class="bi bi-alarm-fill me-2"></i>
                                 {{ now()->format('d/m/Y H:i:s') }}</span>
                         </p>
-                        <p>
-                            {{ env('APP_VERSION') }}
-                            hosted with
-                            <small class="text-muted text-uppercase">
-                                <a href="https://altervista.org" target="_blank" rel="noopener noreferrer">altervista
-                                </a>
-                            </small>
+                        <p class="small mb-0 opacity-75">
+                            {{ env('APP_VERSION') }} | Hosted on 
+                            <a href="https://altervista.org" target="_blank" class="text-info text-decoration-none">Altervista</a>
                             <br>
-                            created with
-                            <small class="text-muted text-uppercase">
-                                <a href="https://laravel.com/docs/12.x" target="_blank"
-                                    rel="noopener noreferrer">laravel</a>
-                            </small>
+                            Created with 
+                            <a href="https://laravel.com/docs/12.x" target="_blank" class="text-info text-decoration-none">Laravel 12</a>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 text-center text-md-end">
-                        <h6 class="text-warning mb-3">Informazioni Personali</h6>
+                        <h6 class="text-warning text-uppercase mb-3 small fw-bold">Contatti</h6>
                         <ul class="list-unstyled mb-0">
                             <li class="mb-2">
-                                <span class="text-muted small text-uppercase">Telefono:</span>
+                                <span class="text-muted small text-uppercase">Tel:</span>
                                 <small class="text-white"> +39 370 351 3963</small>
                             </li>
                             <li class="mb-2">
                                 <span class="text-muted small text-uppercase">Mail:</span>
                                 <small>
-                                    <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="text-white text-decoration-none">
+                                    <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="text-info text-decoration-none">
                                         riccardo.mandich.25@stud.itsaltoadriatico.it
                                     </a>
                                 </small>
                             </li>
-                            <li>
-                                <span class="text-muted small text-uppercase">Nascita:</span>
-                                <small class="text-white"> 2006</small>
-                            </li>
                         </ul>
                     </div>
                 </div>
+            </div>
         </footer>
     </div>
     @yield('script')

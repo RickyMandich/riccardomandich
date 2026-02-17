@@ -142,6 +142,22 @@ h3 {
     left: -100px;
 }
 
+/* Glass Components */
+.glass-nav {
+    background: rgba(15, 23, 42, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.glass-footer {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+}
+
 /* Profile Image */
 .profile-img-container {
     width: 180px;
