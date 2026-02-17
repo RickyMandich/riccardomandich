@@ -1,0 +1,2 @@
+- [ ] sistemare curriculum autogenerato
+- [ ] aggiungere foto
