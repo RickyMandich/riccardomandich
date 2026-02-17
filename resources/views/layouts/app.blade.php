@@ -42,8 +42,8 @@
             </div>
         </main>
 
-        <footer class="glass-footer mt-auto py-5">
-            <div class="container">
+        <footer class="glass-footer mt-auto py-4">
+            <div class="main-container px-3">
                 <div class="row g-4 align-items-center">
                     <div class="col-12 col-md-6 text-center text-md-start">
                         <p class="mb-2">
@@ -51,24 +51,27 @@
                                 {{ now()->format('d/m/Y H:i:s') }}</span>
                         </p>
                         <p class="small mb-0 opacity-75">
-                            {{ env('APP_VERSION') }} | Hosted on 
-                            <a href="https://altervista.org" target="_blank" class="text-info text-decoration-none">Altervista</a>
+                            {{ env('APP_VERSION') }} | Hosted on
+                            <a href="https://altervista.org" target="_blank"
+                                class="text-info text-decoration-none">Altervista</a>
                             <br>
-                            Created with 
-                            <a href="https://laravel.com/docs/12.x" target="_blank" class="text-info text-decoration-none">Laravel 12</a>
+                            Created with
+                            <a href="https://laravel.com/docs/12.x" target="_blank"
+                                class="text-info text-decoration-none">Laravel 12</a>
                         </p>
                     </div>
                     <div class="col-12 col-md-6 text-center text-md-end">
-                        <h6 class="text-warning text-uppercase mb-3 small fw-bold">Contatti</h6>
+                        <h6 class="text-warning text-uppercase mb-2 small fw-bold">Contatti</h6>
                         <ul class="list-unstyled mb-0">
-                            <li class="mb-2">
+                            <li class="mb-1">
                                 <span class="text-muted small text-uppercase">Tel:</span>
                                 <small class="text-white"> +39 370 351 3963</small>
                             </li>
-                            <li class="mb-2">
+                            <li>
                                 <span class="text-muted small text-uppercase">Mail:</span>
                                 <small>
-                                    <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="text-info text-decoration-none">
+                                    <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it"
+                                        class="text-info text-decoration-none">
                                         riccardo.mandich.25@stud.itsaltoadriatico.it
                                     </a>
                                 </small>
