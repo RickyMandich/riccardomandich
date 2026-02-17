@@ -30,7 +30,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-md-5 mt-4 mt-md-0">
+                <div class="col-md-12 mt-4 mt-md-0">
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
                         <a href="{{ asset('documents/10_Fust_Mandich_RIccardo.pdf') }}" target="_blank"
                             class="btn btn-warning rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
@@ -96,7 +96,7 @@
                     <div>
                         <div class="d-flex justify-content-between mb-1">
                             <span>Inglese</span>
-                            <span class="badge bg-info text-dark">Livello B2</span>
+                            <span class="badge bg-info text-dark">Circa Livello B2 (Non Certificato)</span>
                         </div>
                     </div>
 
@@ -104,7 +104,7 @@
 
                     <h3 class="section-title"><i class="bi bi-controller"></i> Hobby & Interessi</h3>
                     <p class="small text-muted mb-0">
-                        Lettura, Star Wars TCG, Dungeons & Dragons.
+                        Lettura, Star Wars Unlimited, Dungeons & Dragons, tiro con l'arco.
                     </p>
                 </section>
             </div>
@@ -146,7 +146,7 @@
 
                 <!-- Competenze Tecniche -->
                 <section class="glass-card">
-                    <h3 class="section-title"><i class="bi bi-cpu-fill"></i> Competenze Tecniche</h3>
+                    <h3 class="section-title"><i class="bi bi-cpu-fill"></i> Competenze Tecniche a fine corso</h3>
                     <div class="mb-3">
                         <h6 class="text-muted small text-uppercase fw-bold mb-2">Linguaggi & Frameworks</h6>
                         <div class="d-flex flex-wrap">
@@ -174,13 +174,12 @@
 
                 <!-- Progetti Hobby -->
                 <section class="glass-card">
-                    <h3 class="section-title"><i class="bi bi-code-slash"></i> Progetti & Side Hustles</h3>
+                    <h3 class="section-title"><i class="bi bi-code-slash"></i> Progetti</h3>
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="p-3 border border-secondary rounded-3 h-100">
                                 <h6>UnlimitedDB.net</h6>
-                                <p class="small text-muted">Database per gioco di carte collezionabili di Star Wars creato
-                                    da zero.</p>
+                                <p class="small text-muted">Database per il gioco `Star Wars Unlimited`.</p>
                                 <a href="https://UnlimitedDB.net" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i></a>
@@ -189,7 +188,8 @@
                         <div class="col-md-6">
                             <div class="p-3 border border-secondary rounded-3 h-100">
                                 <h6>Phandalverse</h6>
-                                <p class="small text-muted">Sito per la gestione di appunti e mondo di gioco D&D.</p>
+                                <p class="small text-muted">Sito per la gestione di appunti del mondo di gioco della mia
+                                    campagna di D&D.</p>
                                 <a href="https://phandalverse.altervista.org" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i></a>
