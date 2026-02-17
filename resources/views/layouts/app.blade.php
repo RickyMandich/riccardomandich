@@ -93,15 +93,15 @@
                                     </li>
                                     <li>
                                         <small class="text-muted text-uppercase">
-                                            <a href="mailto:riccardo.mandich.25@itsaltoadriatico.it" target="_blank"
-                                                rel="noopener noreferrer">
-                                                riccardo.mandich.25@itsaltoadriatico.it
+                                            <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it"
+                                                target="_blank" rel="noopener noreferrer">
+                                                riccardo.mandich.25@stud.itsaltoadriatico.it
                                             </a>
                                         </small>
                                     </li>
                                     <li>
                                         <small>
-                                            2026/07/06
+                                            2006
                                         </small>
                                     </li>
                                 </ul>
