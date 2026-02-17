@@ -74,7 +74,7 @@
 
         <div class="row">
             <!-- Sidebar / Brief Profile -->
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <section class="glass-card h-100">
                     <h3 class="section-title"><i class="bi bi-person-fill"></i> Profilo Personale</h3>
                     <p class="text-muted">
