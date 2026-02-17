@@ -20,7 +20,8 @@
                     <p class="lead text-muted mb-4">Full Stack Developer | Backend Oriented</p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
                         <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="contact-link">
-                            <i class="bi bi-envelope-fill"></i> <span class="d-none d-sm-inline">Email</span>
+                            <i class="bi bi-envelope-fill"></i> <span
+                                class="d-none d-sm-inline">riccardo.mandich.25@stud.itsaltoadriatico.it</span>
                         </a>
                         <a href="tel:+393703513963" class="contact-link">
                             <i class="bi bi-telephone-fill"></i> <span class="d-none d-sm-inline">+39 370 351 3963</span>
