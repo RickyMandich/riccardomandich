@@ -196,37 +196,13 @@
         </div>
     </div>
     @section('script')
-        <!-- Fallback CDN per garantire che Bootstrap JS sia presente anche se gli asset locali non sono sincronizzati -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
         <script>
-            console.log('Script CV caricato correttamente (con CDN Fallback)');
             document.addEventListener('DOMContentLoaded', function () {
-                console.log('DOM caricato, inizializzazione QR...');
-                
                 const qrImage = document.getElementById('qrImage');
                 const currentUrl = encodeURIComponent(window.location.href);
-                
+
                 if (qrImage) {
                     qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
-                    console.log('QR pronto per:', window.location.href);
-                }
-
-                // Attivazione manuale del modal per bypassare eventuali problemi del Data API
-                const modalEl = document.getElementById('qrModal');
-                const shareBtn = document.querySelector('[data-bs-target="#qrModal"]');
-                
-                if (shareBtn && modalEl) {
-                    shareBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        console.log('Apertura manuale modal via Bootstrap CDN...');
-                        try {
-                            const myModal = new bootstrap.Modal(modalEl);
-                            myModal.show();
-                        } catch (err) {
-                            console.error('Errore durante l\'apertura del modal:', err);
-                        }
-                    });
                 }
             });
         </script>
