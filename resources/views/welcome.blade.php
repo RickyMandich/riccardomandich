@@ -197,10 +197,19 @@
     </div>
     @section('script')
         <script>
+            console.log('Script CV caricato correttamente');
             document.addEventListener('DOMContentLoaded', function () {
+                console.log('DOM caricato, inizializzazione QR...');
                 const qrImage = document.getElementById('qrImage');
                 const currentUrl = encodeURIComponent(window.location.href);
-                qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
+                console.log('URL per QR:', window.location.href);
+
+                if (qrImage) {
+                    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${currentUrl}`;
+                    console.log('Sorgente QR impostata:', qrImage.src);
+                } else {
+                    console.error('Errore: Elemento qrImage non trovato!');
+                }
             });
         </script>
     @endsection
