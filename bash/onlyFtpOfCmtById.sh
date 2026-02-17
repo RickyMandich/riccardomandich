@@ -21,7 +21,7 @@ function uploadFilesFromCommit() {
         # Costruisci il percorso FTP per il file
         local relativePath=$(dirname "$file")
         local fileName=$(basename "$file")
-        local ftpRequest="ftp://riccardomandich:R1cc4rd006%21@ftp.riccardomandich.altervista.org:21/$relativePath/$fileName"
+        local ftpRequest="ftp://riccardomandich:R1cc4rd006@ftp.riccardomandich.altervista.org:21/$relativePath/$fileName"
 
         # Esegui il comando curl per caricare il file
         local curlCommand="curl -T \"$file\" \"$ftpRequest\" --ftp-pasv --ftp-create-dirs"
@@ -39,7 +39,7 @@ function uploadFilesFromCommit() {
                 echo "Errore durante il caricamento di $file. Rimozione dal server in corso..."
 
                 # Comando per eliminare il file dal server FTP
-                local deleteCommand="curl -Q \"DELE $relativePath/$fileName\" \"ftp://riccardomandich:R1cc4rd006%21@ftp.riccardomandich.altervista.org:21/\" --ftp-pasv"
+                local deleteCommand="curl -Q \"DELE $relativePath/$fileName\" \"ftp://riccardomandich:R1cc4rd006@ftp.riccardomandich.altervista.org:21/\" --ftp-pasv"
                 echo -e "$deleteCommand"
                 eval "$deleteCommand"
 

@@ -7,7 +7,7 @@ find . -type f -not -path './.git/*' -not -path './node_modules/*' -not -path '.
     # Costruisci il percorso FTP per il file
     relativePath=$(dirname "$file" | sed 's/^\.\///')
     fileName=$(basename "$file")
-    ftpRequest="ftp://riccardomandich:R1cc4rd006%21@ftp.riccardomandich.altervista.org:21/$relativePath/$fileName"
+    ftpRequest="ftp://riccardomandich:R1cc4rd006@ftp.riccardomandich.altervista.org:21/$relativePath/$fileName"
 
     # Esegui il comando curl per caricare il file
     curlCommand="curl -T \"$file\" \"$ftpRequest\" --ftp-pasv --ftp-create-dirs"
