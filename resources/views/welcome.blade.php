@@ -11,7 +11,7 @@
         <header class="glass-card mb-4">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-3">
-                    <img src="{{ storage_path('images/foto-per-cv.jpg') }}" alt="Profile Picture"
+                    <img src="{{ asset('storage/images/foto-per-cv.jpg') }}" alt="Profile Picture"
                         class="img-fluid rounded-circle">
                 </div>
                 <div class="col-md-7">
