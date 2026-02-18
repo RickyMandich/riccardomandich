@@ -44,7 +44,7 @@
                 <div class="col-md-12 mt-3">
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
                         <a href="{{ asset('documents/10_Fust_Mandich_RIccardo.pdf') }}" target="_blank"
-                            class="btn btn-outline-success rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
+                            class="btn btn-outline-success rounded-pill px-3 flex-grow-1 flex-md-grow-0">
                             <i class="bi bi-file-earmark-pdf-fill"></i> Scarica CV
                         </a>
                         <a href="https://github.com/RickyMandich" target="_blank"
@@ -92,7 +92,6 @@
                     <p class="text-muted">
                         Studente del 1° anno del corso FullStack Developer in ITS, motivato e orientato alla crescita nel
                         settore Backend.
-                        Appassionato di sviluppo enterprise e gestione delle infrastrutture IT.
                     </p>
 
                     <hr class="my-4 border-secondary">
@@ -129,15 +128,18 @@
                         <h5 class="mb-0">ITS Academy Alto Adriatico di Pordenone</h5>
                         <p class="text-warning small mb-2">FullStack Developer | 2025 – 2027</p>
                         <div class="small text-muted">
-                            Sviluppo enterprise (C#, ASP.NET, Node.js), Database (SQL Server, PostgreSQL), Cloud (Azure),
-                            DevOps (CI/CD, Git) e UI/UX.
+                            viluppo full-stack di applicazioni web enterprise con C#, ASP.NET, Node.js,
+                            JavaScript/TypeScript, React/Angular, database relazionali (SQL Server, PostgreSQL); gestione
+                            infrastrutture IT (Linux/Windows Server, networking, virtualizzazione containerizzazione
+                            Docker/Kubernetes); deployment cloud (Microsoft Azure), DevOps (CI/CD, Git), cybersecurity,
+                            integrazione AI, UI/UX design e metodologie Agile.
                         </div>
                     </div>
                     <div class="timeline-item mb-0">
                         <h5 class="mb-0">Istituto Fermi di Venezia</h5>
-                        <p class="text-warning small mb-2">Diploma di Perito Informatico | 2025</p>
+                        <p class="text-warning small mb-2">Diploma di Perito Informatico | 2020 - 2025</p>
                         <div class="small text-muted text-uppercase">
-                            Competenze sviluppate: pensiero computazionale.
+                            pensiero computazionale, java, C/C++, php, assembly (emu 8086).
                         </div>
                     </div>
                 </section>
@@ -147,10 +149,10 @@
                     <h3 class="section-title"><i class="bi bi-briefcase-fill"></i> Esperienze Professionali</h3>
                     <div class="timeline-item mb-0">
                         <h5 class="mb-0">SIPE Scorzè</h5>
-                        <p class="text-warning small mb-2">PCTO formativo | 09/2025 – 10/2025</p>
+                        <p class="text-warning small mb-2">PCTO formativo | 09/2025 – 10/2025 (3 settimane totali)</p>
                         <div class="small text-muted">
                             Formazione nella creazione di una web app a partire dalle basi con Springboot, ORM e Maven
-                            (accenni a Angular).
+                            (accenni a Angular senza nessuna applicazione pratica o esempio di codice).
                         </div>
                     </div>
                 </section>
@@ -190,7 +192,7 @@
                         <div class="col-md-6">
                             <div class="p-3 border border-secondary rounded-3 h-100">
                                 <h6>UnlimitedDB.net</h6>
-                                <p class="small text-muted">Database per il gioco `Star Wars Unlimited`.</p>
+                                <p class="small text-muted">Database per il gioco di carte `Star Wars Unlimited`.</p>
                                 <a href="https://UnlimitedDB.net" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i></a>
@@ -204,6 +206,17 @@
                                 <a href="https://phandalverse.altervista.org" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border border-secondary rounded-3 h-100">
+                                <h6>D&D</h6>
+                                <p class="small text-muted">Console Line App in java che fornisce al master di Dungeons and
+                                    Dragons un aiuto nella gestione dei combattimenti.</p>
+                                <a href="https://github.com/RickyMandich/dnd" target="_blank"
+                                    class="small text-info text-decoration-none">apri progetto su github <i
+                                        class="bi bi-arrow-up-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
