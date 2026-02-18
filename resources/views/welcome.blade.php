@@ -44,7 +44,7 @@
                 <div class="col-md-12 mt-4 mt-md-0">
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
                         <a href="{{ asset('documents/10_Fust_Mandich_RIccardo.pdf') }}" target="_blank"
-                            class="btn btn-outline-warning rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
+                            class="btn btn-outline-success rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
                             <i class="bi bi-file-earmark-pdf-fill"></i> Scarica CV
                         </a>
                         <a href="https://github.com/RickyMandich" target="_blank"
