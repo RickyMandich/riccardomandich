@@ -17,24 +17,34 @@
                 </div>
                 <div class="col-md-7">
                     <h1 class="display-4 mb-2"><span class="text-gradient">Riccardo Mandich</span></h1>
-                    <p class="lead text-muted mb-4">Full Stack Developer | Backend Oriented</p>
+                    <p class="lead text-muted mb-4">
+                        Full Stack Developer | Backend Oriented
+                    </p>
                     <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
                         <a href="mailto:riccardo.mandich.25@stud.itsaltoadriatico.it" class="contact-link">
-                            <i class="bi bi-envelope-fill"></i> <span
-                                class="d-none d-sm-inline">riccardo.mandich.25@stud.itsaltoadriatico.it</span>
+                            <i class="bi bi-envelope-fill"></i>
+                            <span class="d-none d-sm-inline">
+                                riccardo.mandich.25@stud.itsaltoadriatico.it
+                            </span>
                         </a>
                         <a href="tel:+393703513963" class="contact-link">
-                            <i class="bi bi-telephone-fill"></i> <span class="d-none d-sm-inline">+39 370 351 3963</span>
+                            <i class="bi bi-telephone-fill"></i>
+                            <span class="d-none d-sm-inline">
+                                +39 370 351 3963
+                            </span>
                         </a>
                         <span class="contact-link">
-                            <i class="bi bi-geo-alt-fill"></i> <span class="d-none d-sm-inline">Marghera, VE</span>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span class="d-none d-sm-inline">
+                                Marghera, VE
+                            </span>
                         </span>
                     </div>
                 </div>
                 <div class="col-md-12 mt-4 mt-md-0">
                     <div class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2">
                         <a href="{{ asset('documents/10_Fust_Mandich_RIccardo.pdf') }}" target="_blank"
-                            class="btn btn-warning rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
+                            class="btn btn-outline-warning rounded-pill px-3 fw-bold flex-grow-1 flex-md-grow-0">
                             <i class="bi bi-file-earmark-pdf-fill"></i> Scarica CV
                         </a>
                         <a href="https://github.com/RickyMandich" target="_blank"
