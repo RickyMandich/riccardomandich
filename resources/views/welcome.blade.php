@@ -191,16 +191,6 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="p-3 border border-secondary rounded-3 h-100">
-                                <h6>UnlimitedDB.net</h6>
-                                <p class="small text-muted">Database per il gioco di carte `Star Wars Unlimited`.</p>
-                                <a href="https://UnlimitedDB.net" target="_blank"
-                                    class="small text-info text-decoration-none">Visita Sito <i
-                                        class="bi bi-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="p-3 border border-secondary rounded-3 h-100">
                                 <h6>Phandalverse</h6>
                                 <p class="small text-muted">Sito per la gestione di appunti del mondo di gioco della mia
                                     campagna di D&D.</p>
@@ -208,8 +198,19 @@
                                     class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i>
                                 </a>
+                                <br>
                                 <a href="https://github.com/RickyMandich/phandalverse" target="_blank"
                                     class="small text-info text-decoration-none">apri progetto su github <i
+                                        class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 border border-secondary rounded-3 h-100">
+                                <h6>UnlimitedDB.net</h6>
+                                <p class="small text-muted">Database per il gioco di carte `Star Wars Unlimited`.</p>
+                                <a href="https://UnlimitedDB.net" target="_blank"
+                                    class="small text-info text-decoration-none">Visita Sito <i
                                         class="bi bi-arrow-up-right"></i>
                                 </a>
                             </div>
