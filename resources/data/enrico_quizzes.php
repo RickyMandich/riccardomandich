@@ -13372,11 +13372,7 @@ interna?',
       1 => 'nessuna',
       2 => 'la stessa che si applica ai carburanti, l\'esenzione dalle
 accise',
-      3 => 'la riduzione del 50% delle accise
-
-
-
-',
+      3 => 'la riduzione del 50% delle accise',
     ),
     'answer' => NULL,
   ),
