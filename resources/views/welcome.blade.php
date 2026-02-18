@@ -15,7 +15,7 @@
                         <img src="{{ asset('images/foto-per-cv.jpg') }}" alt="Riccardo Mandich" class="profile-img">
                     </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 mb-2">
                     <h1 class="display-4 mb-2"><span class="text-gradient">Riccardo Mandich</span></h1>
                     <p class="lead text-muted mb-4">
                         Full Stack Developer | Backend Oriented
