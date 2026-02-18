@@ -190,7 +190,7 @@
                     <h3 class="section-title"><i class="bi bi-code-slash"></i> Progetti</h3>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <div class="p-3 border border-secondary rounded-3 h-100">
+                            <div class="p-3 border border-secondary rounded-3 h-100 glass-card">
                                 <h6>Phandalverse</h6>
                                 <p class="small text-muted">Sito per la gestione di appunti del mondo di gioco della mia
                                     campagna di D&D.</p>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="p-3 border border-secondary rounded-3 h-100">
+                            <div class="p-3 border border-secondary rounded-3 h-100 glass-card">
                                 <h6>UnlimitedDB.net</h6>
                                 <p class="small text-muted">Database per il gioco di carte `Star Wars Unlimited`.</p>
                                 <a href="https://UnlimitedDB.net" target="_blank"
@@ -216,7 +216,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="p-3 border border-secondary rounded-3 h-100">
+                            <div class="p-3 border border-secondary rounded-3 h-100 glass-card">
                                 <h6>D&D</h6>
                                 <p class="small text-muted">Console Line App in java che fornisce al master di Dungeons and
                                     Dragons un aiuto nella gestione dei combattimenti.</p>
