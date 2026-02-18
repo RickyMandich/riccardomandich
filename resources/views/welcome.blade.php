@@ -195,7 +195,8 @@
                                 <p class="small text-muted">Database per il gioco di carte `Star Wars Unlimited`.</p>
                                 <a href="https://UnlimitedDB.net" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
-                                        class="bi bi-arrow-up-right"></i></a>
+                                        class="bi bi-arrow-up-right"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -205,7 +206,12 @@
                                     campagna di D&D.</p>
                                 <a href="https://phandalverse.altervista.org" target="_blank"
                                     class="small text-info text-decoration-none">Visita Sito <i
-                                        class="bi bi-arrow-up-right"></i></a>
+                                        class="bi bi-arrow-up-right"></i>
+                                </a>
+                                <a href="https://github.com/RickyMandich/phandalverse" target="_blank"
+                                    class="small text-info text-decoration-none">apri progetto su github <i
+                                        class="bi bi-arrow-up-right"></i>
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-6">
