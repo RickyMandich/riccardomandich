@@ -26,8 +26,8 @@
                                         @else
                                             <td class="text-center p-0">
                                                 <button class="tombola-cell {{ ($game->board_state[$num] ?? false) ? 'drawn' : '' }}"
-                                                        data-numero="{{ $num }}" id="admin-cell-{{ $num }}"
-                                                        onclick="toggleNumber({{ $num }})">
+                                                    data-numero="{{ $num }}" id="admin-cell-{{ $num }}"
+                                                    onclick="toggleNumber({{ $num }})">
                                                     {{ $num }}
                                                 </button>
                                             </td>
@@ -47,9 +47,8 @@
                 <div class="glass-card">
                     <h5 class="section-title"><i class="bi bi-input-cursor-text"></i> Inserimento Manuale</h5>
                     <div class="input-group mb-2">
-                        <input type="number" class="form-control form-control-lg" id="manualInput"
-                               min="1" max="90" placeholder="1-90"
-                               onkeyup="if(event.key === 'Enter') drawManual()">
+                        <input type="number" class="form-control form-control-lg" id="manualInput" min="1" max="90"
+                            placeholder="1-90" onkeyup="if(event.key === 'Enter') drawManual()">
                         <button class="btn btn-primary btn-lg" onclick="drawManual()">
                             <i class="bi bi-plus-circle"></i> Inserisci
                         </button>
@@ -61,9 +60,10 @@
                 <div class="glass-card">
                     <h5 class="section-title"><i class="bi bi-bullseye"></i> Obiettivo Corrente</h5>
                     <div class="d-flex flex-wrap gap-2" id="objectiveBtns">
-                        @foreach (['AMBO', 'TERNO', 'QUATERNA', 'CINQUINA', 'TOMBOLA'] as $obj)
-                            <button class="btn {{ $game->current_objective === $obj ? 'btn-warning' : 'btn-outline-warning' }} flex-fill"
-                                    onclick="setObjective('{{ $obj }}')" id="obj-{{ $obj }}">
+                        @foreach (['AMBO', 'TERNO', 'QUATERNA', 'CINQUINA', 'TOMBOLA', 'TOMBOLINO'] as $obj)
+                            <button
+                                class="btn {{ $game->current_objective === $obj ? 'btn-warning' : 'btn-outline-warning' }} flex-fill"
+                                onclick="setObjective('{{ $obj }}')" id="obj-{{ $obj }}">
                                 {{ $obj }}
                             </button>
                         @endforeach
@@ -85,7 +85,7 @@
                     </div>
                     <div class="progress mt-3" style="height: 8px;">
                         <div class="progress-bar bg-warning" id="statsProgress"
-                             style="width: {{ ($game->drawn_count / 90) * 100 }}%"></div>
+                            style="width: {{ ($game->drawn_count / 90) * 100 }}%"></div>
                     </div>
                 </div>
 
@@ -93,11 +93,11 @@
                 <div class="glass-card">
                     <h5 class="section-title"><i class="bi bi-tools"></i> Azioni</h5>
                     <div class="d-grid gap-2">
-                        <button class="btn btn-outline-danger" onclick="undoLast()" id="undoBtn"
-                            {{ $game->last_drawn_number ? '' : 'disabled' }}>
+                        <button class="btn btn-outline-danger" onclick="undoLast()" id="undoBtn" {{ $game->last_drawn_number ? '' : 'disabled' }}>
                             <i class="bi bi-arrow-counterclockwise"></i>
                             Annulla ultimo
-                            <span id="undoNumber">{{ $game->last_drawn_number ? '(' . $game->last_drawn_number . ')' : '' }}</span>
+                            <span
+                                id="undoNumber">{{ $game->last_drawn_number ? '(' . $game->last_drawn_number . ')' : '' }}</span>
                         </button>
                         <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newGameModal">
                             <i class="bi bi-plus-square"></i> Nuova Partita
@@ -246,7 +246,7 @@
             try {
                 await apiCall('{{ route("tombola.objective") }}', { objective });
                 showFeedback(`Obiettivo: ${objective}`, 'info');
-            } catch (e) {}
+            } catch (e) { }
         }
 
         async function undoLast() {
@@ -254,7 +254,7 @@
             try {
                 await apiCall('{{ route("tombola.undo") }}', { number: currentState.last_drawn_number });
                 showFeedback('Ultima estrazione annullata', 'warning');
-            } catch (e) {}
+            } catch (e) { }
         }
 
         async function newGame() {
@@ -262,7 +262,7 @@
                 await apiCall('{{ route("tombola.new") }}');
                 showFeedback('Nuova partita iniziata!', 'success');
                 bootstrap.Modal.getInstance(document.getElementById('newGameModal')).hide();
-            } catch (e) {}
+            } catch (e) { }
         }
     </script>
 @endsection
