@@ -65,84 +65,86 @@
 
 @section('script')
     <script>
-        const numeroModal = new bootstrap.Modal(document.getElementById('numeroModal'));
-        const numeroGrande = document.getElementById('numeroGrande');
-        let timeoutId = null;
-        let lastUpdatedAt = @json($game->updated_at?->toISOString());
-        let lastDrawnNumber = @json($game->last_drawn_number);
+        document.addEventListener('DOMContentLoaded', function () {
+            const numeroModal = new bootstrap.Modal(document.getElementById('numeroModal'));
+            const numeroGrande = document.getElementById('numeroGrande');
+            let timeoutId = null;
+            let lastUpdatedAt = @json($game->updated_at?->toISOString());
+            let lastDrawnNumber = @json($game->last_drawn_number);
 
-        function updateBoard(boardState) {
-            for (let i = 1; i <= 90; i++) {
-                const cell = document.getElementById('cell-' + i);
-                if (cell) {
-                    if (boardState[i] || boardState[String(i)]) {
-                        cell.classList.add('drawn');
-                    } else {
-                        cell.classList.remove('drawn');
+            function updateBoard(boardState) {
+                for (let i = 1; i <= 90; i++) {
+                    const cell = document.getElementById('cell-' + i);
+                    if (cell) {
+                        if (boardState[i] || boardState[String(i)]) {
+                            cell.classList.add('drawn');
+                        } else {
+                            cell.classList.remove('drawn');
+                        }
                     }
                 }
             }
-        }
 
-        function updateObjective(objective) {
-            document.getElementById('objectiveText').textContent = objective;
-        }
+            function updateObjective(objective) {
+                document.getElementById('objectiveText').textContent = objective;
+            }
 
-        function updateStats(drawnCount) {
-            document.getElementById('drawnCount').textContent = drawnCount;
-        }
+            function updateStats(drawnCount) {
+                document.getElementById('drawnCount').textContent = drawnCount;
+            }
 
-        function showNumberModal(number) {
-            numeroGrande.textContent = number;
-            numeroModal.show();
-            if (timeoutId) clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                numeroModal.hide();
-            }, 10000);
-        }
-
-        // Close modal on click anywhere
-        document.getElementById('numeroModal').addEventListener('click', function(e) {
-            if (e.target === this || e.target.closest('.modal-body')) {
+            function showNumberModal(number) {
+                numeroGrande.textContent = number;
+                numeroModal.show();
                 if (timeoutId) clearTimeout(timeoutId);
-                numeroModal.hide();
+                timeoutId = setTimeout(() => {
+                    numeroModal.hide();
+                }, 10000);
             }
-        });
 
-        document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function() {
-            if (timeoutId) clearTimeout(timeoutId);
-        });
-
-        // Fullscreen toggle
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
-        }
-
-        // Polling every 500ms
-        setInterval(async () => {
-            try {
-                const response = await fetch('{{ route("tombola.state") }}');
-                const data = await response.json();
-
-                if (data.updated_at !== lastUpdatedAt) {
-                    lastUpdatedAt = data.updated_at;
-                    updateBoard(data.board_state);
-                    updateObjective(data.current_objective);
-                    updateStats(data.drawn_count);
-
-                    // Show modal only when a NEW number is drawn
-                    if (data.last_drawn_number && data.last_drawn_number !== lastDrawnNumber) {
-                        showNumberModal(data.last_drawn_number);
-                    }
-                    lastDrawnNumber = data.last_drawn_number;
+            // Close modal on click anywhere
+            document.getElementById('numeroModal').addEventListener('click', function(e) {
+                if (e.target === this || e.target.closest('.modal-body')) {
+                    if (timeoutId) clearTimeout(timeoutId);
+                    numeroModal.hide();
                 }
-            } catch (e) {
-                console.error('Polling error:', e);
-            }
-        }, 500);
+            });
+
+            document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function() {
+                if (timeoutId) clearTimeout(timeoutId);
+            });
+
+            // Fullscreen toggle
+            window.toggleFullscreen = function() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            };
+
+            // Polling every 500ms
+            setInterval(async () => {
+                try {
+                    const response = await fetch('{{ route("tombola.state") }}');
+                    const data = await response.json();
+
+                    if (data.updated_at !== lastUpdatedAt) {
+                        lastUpdatedAt = data.updated_at;
+                        updateBoard(data.board_state);
+                        updateObjective(data.current_objective);
+                        updateStats(data.drawn_count);
+
+                        // Show modal only when a NEW number is drawn
+                        if (data.last_drawn_number && data.last_drawn_number !== lastDrawnNumber) {
+                            showNumberModal(data.last_drawn_number);
+                        }
+                        lastDrawnNumber = data.last_drawn_number;
+                    }
+                } catch (e) {
+                    console.error('Polling error:', e);
+                }
+            }, 500);
+        });
     </script>
 @endsection
