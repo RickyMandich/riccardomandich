@@ -106,10 +106,6 @@
         width: 80%;
         @extend .mx-auto;
         min-height: 35px;
-
-        @include media-breakpoint-down(md) {
-            font-size: 0.9rem;
-        }
     }
 }
 
