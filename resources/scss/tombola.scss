@@ -114,10 +114,10 @@
     font-size: clamp(1.5rem, 4vw, 3rem);
     color: $warning;
     @extend .text-uppercase;
-    @extend .fw-bold;
     letter-spacing: 0.05em;
 
     span {
+        @extend .fw-bold;
         background: linear-gradient(to right, $warning, lighten($warning, 15%));
         background-clip: text;
         -webkit-background-clip: text;
