@@ -12,6 +12,13 @@
             <h1 class="tombola-objective m-0" id="objectiveTitle">
                 si va per <span id="objectiveText">{{ $game->current_objective }}</span>
             </h1>
+
+            <div class="tombola-stats-bar text-center mt-3">
+                <span class="badge bg-warning text-dark fs-6">
+                    Estratti: <strong id="drawnCount">{{ $game->drawn_count }}</strong> / 90
+                </span>
+            </div>
+
             <button class="btn btn-outline-light btn-sm" onclick="toggleFullscreen()" title="Schermo intero">
                 <i class="bi bi-arrows-fullscreen"></i>
             </button>
@@ -39,12 +46,6 @@
                 @endfor
             </tbody>
         </table>
-
-        <div class="tombola-stats-bar text-center mt-3">
-            <span class="badge bg-warning text-dark fs-6">
-                Estratti: <strong id="drawnCount">{{ $game->drawn_count }}</strong> / 90
-            </span>
-        </div>
     </div>
 
     {{-- Modal popup for giant number --}}
