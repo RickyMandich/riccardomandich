@@ -67,6 +67,7 @@
 @section('script')
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector("nav").classList.add("d-none");
             const numeroModal = new bootstrap.Modal(document.getElementById('numeroModal'));
             const numeroGrande = document.getElementById('numeroGrande');
             let timeoutId = null;
