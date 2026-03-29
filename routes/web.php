@@ -1,9 +1,21 @@
 <?php
 
+use App\Http\Controllers\TombolaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Tombola PRO
+Route::prefix('tombola')->group(function () {
+    Route::get('/', [TombolaController::class, 'display'])->name('tombola.display');
+    Route::get('/admin', [TombolaController::class, 'admin'])->name('tombola.admin');
+    Route::get('/state', [TombolaController::class, 'state'])->name('tombola.state');
+    Route::post('/draw', [TombolaController::class, 'drawNumber'])->name('tombola.draw');
+    Route::post('/undo', [TombolaController::class, 'undoNumber'])->name('tombola.undo');
+    Route::post('/objective', [TombolaController::class, 'setObjective'])->name('tombola.objective');
+    Route::post('/new', [TombolaController::class, 'newGame'])->name('tombola.new');
 });
 
 Route::get('/enrico', function () {

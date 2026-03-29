@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabella Tombola</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-secondary">
+        <div class="container-fluid p-4">
+            <h1 class="text-center mb-4">si va per AMBO</h1>
+
+            <table class="table bg-transparent">
+                <tbody id="tabellone">
+                    <!-- Le righe verranno generate con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal popup per mostrare il numero -->
+        <div class="modal fade" id="numeroModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content bg-primary">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center p-5">
+                        <div class="display-1 text-white fw-bold" id="numeroGrande" style="font-size: 15rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Genera la tabella con i 90 numeri (9 righe x 11 colonne con colonna 6 vuota)
+            const tabellone = document.getElementById('tabellone');
+            const numeroModal = new bootstrap.Modal(document.getElementById('numeroModal'));
+            const numeroGrande = document.getElementById('numeroGrande');
+            const titolo = document.querySelector('h1');
+            let timeoutId = null;
+            let numeroCorrente = 1;
+
+            // Funzione per chiamare un numero specifico
+            function chiamaNumero(numero) {
+                if (numero < 1 || numero > 90) {
+                    console.error('Numero non valido. Deve essere tra 1 e 90.');
+                    return;
+                }
+
+                // Trova il bottone corrispondente
+                const bottone = document.querySelector(`button[data-numero="${numero}"]`);
+                if (bottone) {
+                    // Cambia colore del bottone
+                    bottone.classList.remove('text-light-subtle');
+                    bottone.classList.add('bg-primary', 'text-white', "rounded-circle");
+
+                    // Mostra popup
+                    numeroGrande.textContent = numero;
+                    numeroModal.show();
+
+                    // Chiudi popup dopo 10 secondi
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                    }
+                    timeoutId = setTimeout(() => {
+                        numeroModal.hide();
+                    }, 10000);
+                }
+            }
+
+            // Funzione per cambiare l'obiettivo nel titolo
+            function setObjective(obiettivo) {
+                if (!obiettivo || obiettivo.includes(' ')) {
+                    console.error('L\'obiettivo deve essere una parola singola senza spazi.');
+                    return;
+                }
+
+                // Sostituisce l'ultima parola del titolo
+                const testoTitolo = titolo.textContent;
+                const parole = testoTitolo.split(' ');
+                parole[parole.length - 1] = obiettivo.toUpperCase();
+                titolo.textContent = parole.join(' ');
+            }
+
+            // Crea 9 righe
+            for (let riga = 0; riga < 9; riga++) {
+                const tr = document.createElement('tr');
+
+                // Crea 11 colonne (5 numeri, 1 vuota, 5 numeri)
+                for (let col = 0; col < 11; col++) {
+                    const td = document.createElement('td');
+                    td.className = 'text-center p-0 bg-transparent border-0';
+
+                    // Colonna 6 (indice 5) è vuota
+                    if (col === 5) {
+                        td.className = 'bg-transparent border-0';
+                        tr.appendChild(td);
+                        continue;
+                    }
+
+                    const btn = document.createElement('button');
+                    btn.className = 'btn w-100 text-light-subtle border-0';
+                    btn.textContent = numeroCorrente;
+                    btn.dataset.numero = numeroCorrente;
+                    btn.style.fontSize = '1.5rem';
+                    btn.style.padding = '1rem';
+
+                    btn.addEventListener('click', function() {
+                        chiamaNumero(parseInt(this.dataset.numero));
+                    });
+
+                    td.appendChild(btn);
+                    tr.appendChild(td);
+                    numeroCorrente++;
+                }
+
+                tabellone.appendChild(tr);
+            }
+
+            // Permetti di chiudere il modal cliccandoci sopra
+            document.getElementById('numeroModal').addEventListener('click', function(e) {
+                if (e.target === this || e.target.closest('.modal-dialog')) {
+                    if (timeoutId) {
+                        clearTimeout(timeoutId);
+                    }
+                    numeroModal.hide();
+                }
+            });
+
+            // Pulisci il timeout quando il modal viene chiuso con il pulsante X
+            document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function() {
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+            });
+        </script>
+    </body>
+</html>

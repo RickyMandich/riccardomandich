@@ -3,6 +3,15 @@
     "file": "assets/app-C5NTdEeV.css",
     "src": "resources/css/app.css"
   },
+  "resources/css/tombola.css": {
+    "file": "assets/tombola-DnroKFD0.css",
+    "src": "resources/css/tombola.css",
+    "isEntry": true,
+    "name": "tombola",
+    "names": [
+      "tombola.css"
+    ]
+  },
   "resources/js/app.js": {
     "file": "assets/app-BgCNp8UX.js",
     "name": "app",
