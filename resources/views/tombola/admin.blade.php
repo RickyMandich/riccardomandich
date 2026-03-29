@@ -3,7 +3,7 @@
 @section('title', 'Tombola PRO — Admin')
 
 @section('include')
-    @vite(['resources/css/tombola.css'])
+    @vite(['resources/scss/tombola.scss'])
 @endsection
 
 @section('content')

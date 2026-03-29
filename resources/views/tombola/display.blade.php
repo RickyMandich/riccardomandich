@@ -3,7 +3,7 @@
 @section('title', 'Tombola PRO')
 
 @section('include')
-    @vite(['resources/css/tombola.css'])
+    @vite(['resources/scss/tombola.scss'])
 @endsection
 
 @section('content')
@@ -28,7 +28,7 @@
                             @else
                                 <td class="text-center p-0">
                                     <div class="tombola-cell {{ ($game->board_state[$num] ?? false) ? 'drawn' : '' }}"
-                                         data-numero="{{ $num }}" id="cell-{{ $num }}">
+                                        data-numero="{{ $num }}" id="cell-{{ $num }}">
                                         {{ $num }}
                                     </div>
                                 </td>
@@ -53,7 +53,7 @@
             <div class="modal-content tombola-number-modal-content">
                 <div class="modal-header border-0">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center justify-content-center">
                     <div class="tombola-number-giant" id="numeroGrande"></div>
@@ -103,19 +103,19 @@
             }
 
             // Close modal on click anywhere
-            document.getElementById('numeroModal').addEventListener('click', function(e) {
+            document.getElementById('numeroModal').addEventListener('click', function (e) {
                 if (e.target === this || e.target.closest('.modal-body')) {
                     if (timeoutId) clearTimeout(timeoutId);
                     numeroModal.hide();
                 }
             });
 
-            document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function() {
+            document.getElementById('numeroModal').addEventListener('hidden.bs.modal', function () {
                 if (timeoutId) clearTimeout(timeoutId);
             });
 
             // Fullscreen toggle
-            window.toggleFullscreen = function() {
+            window.toggleFullscreen = function () {
                 if (!document.fullscreenElement) {
                     document.documentElement.requestFullscreen();
                 } else {
