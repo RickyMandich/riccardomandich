@@ -90,7 +90,7 @@ class TombolaController extends Controller
     public function setObjective(Request $request): JsonResponse
     {
         $request->validate([
-            'objective' => 'required|in:AMBO,TERNO,QUATERNA,CINQUINA,TOMBOLA,TOMBOLINO',
+            'objective' => 'required',
         ]);
 
         $game = TombolaGame::getOrCreateActive();

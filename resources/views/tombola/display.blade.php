@@ -18,10 +18,6 @@
                     Estratti: <strong id="drawnCount">{{ $game->drawn_count }}</strong> / 90
                 </span>
             </div>
-
-            <button class="btn btn-outline-light btn-sm" onclick="toggleFullscreen()" title="Schermo intero">
-                <i class="bi bi-arrows-fullscreen"></i>
-            </button>
         </div>
 
         <table class="table tombola-board tombola-display-board" id="tombolaBoard">
