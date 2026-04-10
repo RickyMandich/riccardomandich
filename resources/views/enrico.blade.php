@@ -112,7 +112,7 @@
                     selected: null, 
                     answered: false,
                     qId: {{ $q['id'] }},
-                    correct: {{ $q['answer'] }}
+                    correct: {{ $q['answer'] ?? 'null' }}
                 }">
                         <div class="card quiz-card p-4">
                             <div class="d-flex justify-content-between align-items-start mb-3">

@@ -13340,7 +13340,7 @@ cosa deve essere compilato all\'atto del rifornimento?',
       3 => 'un apposito "memorandum" e il libretto di controllo in
 dotazione alla nave',
     ),
-    'answer' => NULL,
+    'answer' => 3,
   ),
   869 => 
   array (
@@ -13357,7 +13357,7 @@ moto prodotte',
       2 => 'solo i rifornimenti effettuati',
       3 => 'solo i consumi effettuati di carburante, in litri',
     ),
-    'answer' => NULL,
+    'answer' => 1,
   ),
   870 => 
   array (
@@ -13374,6 +13374,6 @@ interna?',
 accise',
       3 => 'la riduzione del 50% delle accise',
     ),
-    'answer' => NULL,
+    'answer' => 2,
   ),
 );
