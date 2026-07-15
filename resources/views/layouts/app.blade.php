@@ -51,9 +51,7 @@
                                 {{ now()->format('d/m/Y H:i:s') }}</span>
                         </p>
                         <p class="small mb-0 opacity-75">
-                            {{ env('APP_VERSION') }} | Hosted on
-                            <a href="https://altervista.org" target="_blank"
-                                class="text-info text-decoration-none">Altervista</a>
+                            {{ env('APP_VERSION') }}
                             <br>
                             Created with
                             <a href="https://laravel.com/docs/12.x" target="_blank"
