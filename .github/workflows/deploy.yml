@@ -15,3 +15,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: /home/ubuntu/scripts/deploy.sh riccardomandich
+          command_timeout: 30m
