@@ -13,7 +13,9 @@ services:
     networks:
       - internal
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+
 
   nginx:
     image: nginx:alpine
@@ -39,14 +41,19 @@ services:
     container_name: riccardomandich_db
     restart: unless-stopped
     environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_RANDOM_ROOT_PASSWORD=true
     volumes:
       - db_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
       - internal
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
 
 networks:
   internal:
