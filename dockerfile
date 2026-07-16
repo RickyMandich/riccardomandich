@@ -3,7 +3,9 @@ FROM node:20-alpine AS node-builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
-COPY . .
+COPY vite.config.js ./
+COPY resources/ ./resources/
+COPY public/ ./public/
 RUN npm run build
 
 # --- Stage 2: dipendenze PHP con Composer ---
