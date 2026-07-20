@@ -7,15 +7,15 @@ services:
       - ./storage:/var/www/html/storage
     environment:
       - DB_HOST=db
-      - DB_DATABASE=${DB_DATABASE}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=my_riccardomandich
+      - DB_USERNAME=riccardomandich
+      - DB_PASSWORD=
     networks:
-      - internal
+      internal:
+        ipv4_address: 172.20.0.10
     depends_on:
       db:
         condition: service_healthy
-
 
   nginx:
     image: nginx:alpine
@@ -42,7 +42,7 @@ services:
     restart: unless-stopped
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_DATABASE=my_riccardomandich
     volumes:
       - db_data:/var/lib/mysql
       - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
@@ -58,6 +58,9 @@ services:
 networks:
   internal:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
   proxy:
     external: true
 
