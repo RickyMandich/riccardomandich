@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./storage:/var/www/html/storage
+      - ./.env:/var/www/html/.env:ro
     environment:
       - DB_HOST=db
       - DB_DATABASE=my_riccardomandich
@@ -31,7 +32,7 @@ services:
       - app
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.riccardomandich.rule=Host(`riccardo.mandich.dev`)"
+      - "traefik.http.routers.riccardomandich.rule=Host(`curriculum.mandich.dev`)"
       - "traefik.http.routers.riccardomandich.entrypoints=websecure"
       - "traefik.http.routers.riccardomandich.tls.certresolver=letsencrypt"
       - "traefik.http.services.riccardomandich.loadbalancer.server.port=80"
