@@ -5,15 +5,18 @@ services:
     restart: unless-stopped
     volumes:
       - ./storage:/var/www/html/storage
+      - ./.env:/var/www/html/.env:ro
     environment:
       - DB_HOST=db
-      - DB_DATABASE=${DB_DATABASE}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=my_riccardomandich
+      - DB_USERNAME=riccardomandich
+      - DB_PASSWORD=
     networks:
-      - internal
+      internal:
+        ipv4_address: 172.20.0.10
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   nginx:
     image: nginx:alpine
@@ -29,7 +32,7 @@ services:
       - app
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.riccardomandich.rule=Host(`riccardo.mandich.dev`)"
+      - "traefik.http.routers.riccardomandich.rule=Host(`curriculum.mandich.dev`)"
       - "traefik.http.routers.riccardomandich.entrypoints=websecure"
       - "traefik.http.routers.riccardomandich.tls.certresolver=letsencrypt"
       - "traefik.http.services.riccardomandich.loadbalancer.server.port=80"
@@ -39,18 +42,26 @@ services:
     container_name: riccardomandich_db
     restart: unless-stopped
     environment:
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=my_riccardomandich
     volumes:
       - db_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
       - internal
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
 
 networks:
   internal:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
   proxy:
     external: true
 
