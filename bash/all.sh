@@ -134,4 +134,3 @@ if [ -n "$COMMIT_MESSAGE" ]; then
     CMT_ARGS+=(-m "$COMMIT_MESSAGE")
 fi
 "$SCRIPT_DIR/cmt.sh" "${CMT_ARGS[@]}"
-"$SCRIPT_DIR/onlyFtpOfLastCmt.sh"
