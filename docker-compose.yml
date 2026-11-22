@@ -36,6 +36,7 @@ services:
       - "traefik.http.routers.riccardomandich.entrypoints=websecure"
       - "traefik.http.routers.riccardomandich.tls.certresolver=letsencrypt"
       - "traefik.http.services.riccardomandich.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
 
   db:
     image: mariadb:11
