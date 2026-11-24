@@ -4,6 +4,7 @@ services:
     container_name: riccardomandich_app
     restart: unless-stopped
     volumes:
+      - ./docker/php/fpm-tuning.conf:/usr/local/etc/php-fpm.d/zz-tuning.conf:ro
       - ./storage:/var/www/html/storage
       - ./.env:/var/www/html/.env:ro
     environment:
@@ -42,6 +43,11 @@ services:
     image: mariadb:11
     container_name: riccardomandich_db
     restart: unless-stopped
+    command:
+      - --innodb-buffer-pool-size=48M
+      - --performance-schema=OFF
+      - --max-connections=20
+      - --key-buffer-size=8M
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=my_riccardomandich
