@@ -5,7 +5,7 @@
 - [x] `docker/mysql/init.dev.sql`: utente `riccardomandich` autorizzato dalla subnet dev
 - [x] sezione "Sviluppo locale (Docker)" nel `README.md`
 - [x] `Dockerfile`: lo stage Composer ora parte da `php:8.2-fpm-alpine` (con il binario di `composer:2`), perche' `composer:2` e' passata a PHP 8.6 e rompeva il build con il `composer.lock`
-- [ ] provare in locale `up -d --build` e `exec app php artisan migrate` (non ancora testato)
+- [X] provare in locale `up -d --build` e `exec app php artisan migrate` (non ancora testato)
 
 # contatti corteo (raccolta numeri via QR code durante la mobilitazione)
 - [x] migrazione + modello `Contatto` (tabella `contatti`, telefono normalizzato `+39...` e unico)
@@ -16,9 +16,9 @@
 - [x] chiave admin generata da sola in `storage/app/contatti-admin-key.txt` se `CONTATTI_ADMIN_KEY` e' vuota; comando `php artisan contatti:chiave`
 - [x] pulsante "Condividi pagina admin" (link con la chiave)
 - [x] QR vuoto in admin e in stampa (`QRCode is not defined`): sostituito `qrcode@1.5.3` (jsDelivr) con `qrcodejs` da cdnjs, canvas sostituito da `<div id="qr">`
-- [ ] verificare in locale che il QR compaia e che la stampa lo mostri
-- [ ] in produzione: `php artisan migrate`, poi leggere la chiave con `php artisan contatti:chiave` (oppure impostare `CONTATTI_ADMIN_KEY` nel `.env`)
-- [ ] dopo la mobilitazione: scaricare il `.vcf` se serve e usare "Svuota tutto"
+- [X] verificare in locale che il QR compaia e che la stampa lo mostri
+- [X] in produzione: `php artisan migrate`, poi leggere la chiave con `php artisan contatti:chiave` (oppure impostare `CONTATTI_ADMIN_KEY` nel `.env`)
+- [X] dopo la mobilitazione: scaricare il `.vcf` se serve e usare "Svuota tutto"
 
 # enrico (enrico mi ha chiesto di preparargli una pagina dedicata a delle domande)
 ## indicazioni
